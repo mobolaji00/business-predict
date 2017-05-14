@@ -10,7 +10,8 @@ import android.widget.HorizontalScrollView;
  * Created by mobolajioo on 5/2/17.
  */
 
-public class FirstScreenGestureListener extends GestureDetector.SimpleOnGestureListener {
+public class FirstScreenGestureListener extends GestureDetector.SimpleOnGestureListener
+{
 
     private static final String DEBUG_TAG = "Gestures";
     private static final String INFO_TAG = "Gestures";
@@ -43,5 +44,40 @@ public class FirstScreenGestureListener extends GestureDetector.SimpleOnGestureL
         return true;
     }
 
+/*
+    @Override
+    public boolean onFling(MotionEvent event1, MotionEvent event2, float velocityX, float velocityY)
+    {
+        /*
+        Log.d(DEBUG_TAG, event1.toString()+" & "+event2.toString());
+        Log.d(DEBUG_TAG, "OnFling() method in FirstScreenGestureListener");
+
+
+        Log.i("Printing Fling VelX","velocityX is "+velocityX);
+        //Log.i("Printing hsv scrollX","scrollX is "+hsv.getScrollX());
+        */
+
+
+        //ScrollLeftOrRight slr = new ScrollLeftOrRight();
+        //slr.scroll(hsv,scroll_adjust,(int) event1.getRawX(),(int)event2.getRawX(),velocityX);
+
+        //return false;
+
+        /*
+        final int e1 = (int) event1.getRawX();
+        final int e2 = (int)event2.getRawX();
+        final double v = velocityX;
+
+        hsv.post(new Runnable() {
+            @Override
+            public void run() {
+                ScrollLeftOrRight slr = new ScrollLeftOrRight();
+                slr.scroll(hsv,scroll_adjust,(int) e1, e2 , v);
+            }
+        });
+        */
+
+        //return true;
+    // }
 }
 
