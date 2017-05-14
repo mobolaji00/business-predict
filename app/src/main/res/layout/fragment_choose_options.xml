@@ -1,0 +1,25 @@
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/choose_options_scroller"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:fadeScrollbars="false"
+    android:scrollbars="none"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:id="@+id/options"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/layout_options_page_1" />
+
+        <include layout="@layout/layout_options_page_2" />
+
+        <include layout="@layout/layout_options_page_3" />
+
+        <include layout="@layout/layout_options_page_4" />
+
+    </LinearLayout>
+
+</HorizontalScrollView>

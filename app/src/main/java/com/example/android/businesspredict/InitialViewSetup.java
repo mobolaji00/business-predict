@@ -1,0 +1,83 @@
+package com.example.android.businesspredict;
+
+import android.content.Context;
+import android.content.res.Resources;
+import android.util.Log;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.HorizontalScrollView;
+import android.widget.Spinner;
+
+/**
+ * Created by mobolajioo on 5/2/17.
+ */
+
+public class InitialViewSetup {
+
+    private View view;
+    private HorizontalScrollView hsv;
+
+    /**
+    public InitialViewSetup(View view, HorizontalScrollView hsv)
+    {
+        this.view = view;
+        this.hsv = hsv;
+    }
+     **/
+
+    public void surroundViewWithBorder(final ViewGroup vg)
+    {
+        final int screenWidth = Resources.getSystem().getDisplayMetrics().widthPixels;
+
+        for(int index=0; index < vg.getChildCount(); ++index) {
+
+            View iv = vg.getChildAt(index);
+
+            ViewGroup.LayoutParams params = iv.getLayoutParams();
+            params.width = screenWidth;
+            iv.setLayoutParams(params);
+            iv.setBackgroundResource(R.drawable.default_display);
+
+        }
+    }
+
+    public void scrollViewBy(final HorizontalScrollView hsv, final int adjust){
+
+        final int screenWidth = Resources.getSystem().getDisplayMetrics().widthPixels;
+        final int screenHeight = Resources.getSystem().getDisplayMetrics().heightPixels;
+
+        // Scroll by adjust
+        hsv.post(new Runnable() {
+            @Override
+            public void run() {
+                hsv.smoothScrollBy((adjust), 0);
+                Log.i("SELECTED", "Margin is "+adjust);
+                Log.i("SELECTED", "Width is "+screenWidth);
+                Log.i("SELECTED", "Height is "+screenHeight);
+            }
+        });
+
+    }
+
+    public void createSpinners(View view, Context context)
+    {
+        Spinner owner_spinner = (Spinner) view.findViewById(R.id.spinner_owner);
+        ArrayAdapter<CharSequence> owner_adapter = ArrayAdapter.createFromResource(context,
+                R.array.array_1_to_10, android.R.layout.simple_spinner_item);
+
+        owner_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        owner_spinner.setAdapter(owner_adapter);
+        owner_spinner.setSelection(owner_adapter.getPosition("1"));
+
+        Spinner owner_operator_spinner = (Spinner) view.findViewById(R.id.spinner_owner_operator);
+        ArrayAdapter<CharSequence> owner_operator_adapter = ArrayAdapter.createFromResource(context,
+                R.array.array_1_to_10, android.R.layout.simple_spinner_item);
+
+        owner_operator_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        owner_operator_spinner.setAdapter(owner_operator_adapter);
+        owner_operator_spinner.setSelection(owner_operator_adapter.getPosition("1"));
+
+    }
+
+}
