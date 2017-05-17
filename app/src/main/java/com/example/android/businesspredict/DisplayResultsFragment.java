@@ -6,11 +6,14 @@ import android.content.ContextWrapper;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.GestureDetectorCompat;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.HorizontalScrollView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -22,16 +25,10 @@ import android.widget.HorizontalScrollView;
 public class DisplayResultsFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
-    private GestureDetectorCompat mDetector;
-    private int mActiveFeature = 0;
     private View view;
-    private MainActivity ma;
-    private HorizontalScrollView hsv;
-    private int results_start_adjust = 0;
-    private int results_scroll_adjust = 0;
 
-    final private int SWIPE_MIN_DISTANCE = 5;
-    final private int SWIPE_THRESHOLD_VELOCITY = 300;
+    private ViewPager mPager;
+    private PagerAdapter mPagerAdapter;
 
     public DisplayResultsFragment() {
         // Required empty public constructor
@@ -44,45 +41,12 @@ public class DisplayResultsFragment extends Fragment {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_display_results, container, false);
 
-        // Get scroller
-        //hsv = (HorizontalScrollView) view.findViewById(R.id.display_results_scroller);
-        hsv = (HorizontalScrollView) view.findViewById(R.id.display_results_scroller);
-
-        ma = (MainActivity) new cleanActivity().getActivity();
-
-        results_scroll_adjust = (int) getResources().getDimension(R.dimen.results_scroll_adjust);
-
-        mDetector = new GestureDetectorCompat(view.getContext(), new FirstScreenGestureListener(hsv,view.getContext(),results_scroll_adjust));
-
-        //Set scroller on touch listener
-        HandleTouch ht = new HandleTouch(mDetector, ma, view.getContext(),results_scroll_adjust);
-        hsv.setOnTouchListener(ht);
-
-        //Make changes to inital view
-        ViewGroup vg = (ViewGroup) view.findViewById(R.id.results);
-        InitialViewSetup ivs = new InitialViewSetup();
-
-        ivs.surroundViewWithBorder(vg);
-
-        results_start_adjust = (int) getResources().getDimension(R.dimen.results_start_adjust);
-        ivs.scrollViewBy(hsv, results_start_adjust);
+        List<Fragment> fragments = getResultsFragments();
+        mPagerAdapter = new MyPageAdapter(getFragmentManager(),fragments);
+        mPager = (ViewPager)view.findViewById(R.id.view_results_pager);
+        mPager.setAdapter(mPagerAdapter);
 
         return view;
-    }
-
-    class cleanActivity
-    {
-        public Activity getActivity()
-        {
-            Context context = view.getContext();
-            while (context instanceof ContextWrapper) {
-                if (context instanceof Activity) {
-                    return (Activity)context;
-                }
-                context = ((ContextWrapper)context).getBaseContext();
-            }
-            return null;
-        }
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -125,4 +89,27 @@ public class DisplayResultsFragment extends Fragment {
         public void onDisplayAreaClicked();
     }
 
+    private List<Fragment> getResultsFragments()
+    {
+        List<Fragment> fList = new ArrayList<Fragment>();
+        fList.add(CreateResultsFragments.newInstance("Fragment 1"));
+        fList.add(CreateResultsFragments.newInstance("Fragment 2"));
+        fList.add(CreateResultsFragments.newInstance("Fragment 3"));
+        return fList;
+    }
+
+    class cleanActivity
+    {
+        public Activity getActivity()
+        {
+            Context context = view.getContext();
+            while (context instanceof ContextWrapper) {
+                if (context instanceof Activity) {
+                    return (Activity)context;
+                }
+                context = ((ContextWrapper)context).getBaseContext();
+            }
+            return null;
+        }
+    }
 }

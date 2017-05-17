@@ -6,11 +6,14 @@ import android.content.ContextWrapper;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.GestureDetectorCompat;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.HorizontalScrollView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -23,11 +26,9 @@ public class ChooseOptionsFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
     private View view;
-    private HorizontalScrollView hsv;
-    private int options_start_adjust = 0;
-    private int options_scroll_adjust = 0;
-    private MainActivity ma;
-    private GestureDetectorCompat mDetector;
+
+    private ViewPager mPager;
+    private PagerAdapter mPagerAdapter;
 
 
     public ChooseOptionsFragment() {
@@ -41,29 +42,15 @@ public class ChooseOptionsFragment extends Fragment {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_choose_options, container, false);
 
-        // Get scroller
-        hsv = (HorizontalScrollView) view.findViewById(R.id.choose_options_scroller);
+        List<Fragment> fragments = getOptionsFragments();
+        mPagerAdapter = new MyPageAdapter(getFragmentManager(),fragments);
+        mPager = (ViewPager)view.findViewById(R.id.view_options_pager);
+        mPager.setAdapter(mPagerAdapter);
 
-        ma = (MainActivity) new cleanActivity().getActivity();
-
-        options_scroll_adjust = (int) getResources().getDimension(R.dimen.options_scroll_adjust);
-
-        mDetector = new GestureDetectorCompat(view.getContext(), new FirstScreenGestureListener(hsv,view.getContext(),options_scroll_adjust));
-
-        //Set scroller on touch listener
-        HandleTouch ht = new HandleTouch(mDetector, ma, view.getContext(),options_scroll_adjust);
-        hsv.setOnTouchListener(ht);
-
-        //Make changes to inital view
-        ViewGroup vg = (ViewGroup) view.findViewById(R.id.options);
+        /*
         InitialViewSetup ivs = new InitialViewSetup();
-
         ivs.createSpinners(view, this.getContext());
-
-        ivs.surroundViewWithBorder(vg);
-
-        options_start_adjust = (int) getResources().getDimension(R.dimen.options_start_adjust);
-        ivs.scrollViewBy(hsv, options_start_adjust);
+        */
 
         return view;
     }
@@ -121,6 +108,15 @@ public class ChooseOptionsFragment extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
         public void onOptionsAreaClicked();
+    }
+
+    private List<Fragment> getOptionsFragments()
+    {
+        List<Fragment> fList = new ArrayList<Fragment>();
+        fList.add(CreateResultsFragments.newInstance("Fragment 1"));
+        fList.add(CreateResultsFragments.newInstance("Fragment 2"));
+        fList.add(CreateResultsFragments.newInstance("Fragment 3"));
+        return fList;
     }
 
 }

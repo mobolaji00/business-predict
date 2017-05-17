@@ -26,20 +26,15 @@ public class InitialViewSetup {
     }
      **/
 
-    public void surroundViewWithBorder(final ViewGroup vg)
+    public void surroundViewWithBorder(final View v)
     {
         final int screenWidth = Resources.getSystem().getDisplayMetrics().widthPixels;
 
-        for(int index=0; index < vg.getChildCount(); ++index) {
+        ViewGroup.LayoutParams params = v.getLayoutParams();
+        params.width = screenWidth;
+        v.setLayoutParams(params);
+        v.setBackgroundResource(R.drawable.default_display);
 
-            View iv = vg.getChildAt(index);
-
-            ViewGroup.LayoutParams params = iv.getLayoutParams();
-            params.width = screenWidth;
-            iv.setLayoutParams(params);
-            iv.setBackgroundResource(R.drawable.default_display);
-
-        }
     }
 
     public void scrollViewBy(final HorizontalScrollView hsv, final int adjust){
