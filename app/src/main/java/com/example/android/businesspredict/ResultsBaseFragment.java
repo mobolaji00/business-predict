@@ -92,9 +92,9 @@ public class ResultsBaseFragment extends Fragment {
     private List<Fragment> getResultsFragments()
     {
         List<Fragment> fList = new ArrayList<Fragment>();
-        fList.add(CreateResultsFragments.newInstance("Fragment 1"));
-        fList.add(CreateResultsFragments.newInstance("Fragment 2"));
-        fList.add(CreateResultsFragments.newInstance("Fragment 3"));
+        fList.add(CreateResultsFragments.newInstance(""));
+        fList.add(CreateResultsFragments.newInstance(""));
+        fList.add(CreateResultsFragments.newInstance(""));
         return fList;
     }
 

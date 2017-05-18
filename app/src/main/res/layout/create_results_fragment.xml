@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
     <ImageView
         android:id="@+id/test1"
@@ -10,6 +10,7 @@
         android:layout_height="wrap_content"
         android:scaleType="centerInside"
         android:src="@drawable/logo_1"
-        android:layout_margin="@dimen/results_start_adjust"/>
+        android:layout_margin="@dimen/results_start_adjust"
+        android:background="@drawable/default_display"/>
 
 </RelativeLayout>

@@ -113,9 +113,9 @@ public class OptionsBaseFragment extends Fragment {
     private List<Fragment> getOptionsFragments()
     {
         List<Fragment> fList = new ArrayList<Fragment>();
-        fList.add(CreateOptionsFragments.newInstance("Fragment 1"));
-        fList.add(CreateOptionsFragments.newInstance("Fragment 2"));
-        fList.add(CreateOptionsFragments.newInstance("Fragment 3"));
+        fList.add(CreateOptionsFragments.newInstance("page_1"));
+        fList.add(CreateOptionsFragments.newInstance("page_1"));
+        fList.add(CreateOptionsFragments.newInstance("page_1"));
         return fList;
     }
 

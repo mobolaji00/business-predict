@@ -1,0 +1,44 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <Space
+        android:layout_width="1dp"
+        android:layout_height="30dp" />
+
+    <TextView
+        android:id="@+id/product_service_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="What does this business provide?"
+        android:layout_marginLeft="20dp"/>
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="20dp">
+
+        <RadioButton
+            android:id="@+id/radio_product"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/product" />
+
+        <RadioButton
+            android:id="@+id/radio_service"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/service" />
+
+        <RadioButton
+            android:id="@+id/radio_product_and_service"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/product_and_service" />
+
+    </RadioGroup>
+
+    <Space
+        android:layout_width="fill_parent"
+        android:layout_height="30dp" />
+
+</merge>
