@@ -5,12 +5,12 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity implements
-        DisplayResultsFragment.OnFragmentInteractionListener,
-        ChooseOptionsFragment.OnFragmentInteractionListener,
+        ResultsBaseFragment.OnFragmentInteractionListener,
+        OptionsBaseFragment.OnFragmentInteractionListener,
         AnalyzeButtonFragment.OnFragmentInteractionListener{
 
-    private DisplayResultsFragment drf;
-    private ChooseOptionsFragment cof;
+    private ResultsBaseFragment drf;
+    private OptionsBaseFragment cof;
     private AnalyzeButtonFragment abf;
 
     @Override
@@ -18,14 +18,14 @@ public class MainActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        drf = new DisplayResultsFragment();
-        getSupportFragmentManager().beginTransaction().add(R.id.top_fragment, drf,"fragment_display_results").commit();
+        drf = new ResultsBaseFragment();
+        getSupportFragmentManager().beginTransaction().add(R.id.top_fragment, drf,"results_pager_fragment").commit();
 
-        cof = new ChooseOptionsFragment();
-        getSupportFragmentManager().beginTransaction().add(R.id.middle_fragment, cof,"fragment_choose_options").commit();
+        cof = new OptionsBaseFragment();
+        getSupportFragmentManager().beginTransaction().add(R.id.middle_fragment, cof,"options_pager_fragment").commit();
 
         abf = new AnalyzeButtonFragment();
-        getSupportFragmentManager().beginTransaction().add(R.id.bottom_fragment, abf,"fragment_analyze_button").commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.bottom_fragment, abf,"analyze_button_fragment").commit();
     }
 
     public void onDisplayAreaClicked()

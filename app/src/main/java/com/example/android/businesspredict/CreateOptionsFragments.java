@@ -7,16 +7,17 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
- * Created by mobolajioo on 5/17/17.
+ * Created by mobolajioo on 5/18/17.
  */
 
-public class CreateResultsFragments extends Fragment {
+
+public class CreateOptionsFragments extends Fragment {
 
     public static final String EXTRA_MESSAGE = "EXTRA_MESSAGE";
 
-    public static final CreateResultsFragments newInstance(String message)
+    public static final CreateOptionsFragments newInstance(String message)
     {
-        CreateResultsFragments f = new CreateResultsFragments();
+        CreateOptionsFragments f = new CreateOptionsFragments();
         Bundle bdl = new Bundle(1);
         bdl.putString(EXTRA_MESSAGE, message);
         f.setArguments(bdl);
@@ -25,7 +26,7 @@ public class CreateResultsFragments extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-        View view = inflater.inflate(R.layout.create_results_fragment, container, false);
+        View view = inflater.inflate(R.layout.create_options_fragment, container, false);
 
         View v = view.findViewById(R.id.test1);
         InitialViewSetup ivs = new InitialViewSetup();
@@ -35,5 +36,6 @@ public class CreateResultsFragments extends Fragment {
     }
 
 }
+
 
 

@@ -29,7 +29,7 @@ public class AnalyzeButtonFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.fragment_analyze_button, container, false);
+        view = inflater.inflate(R.layout.analyze_button_fragment, container, false);
         return view;
     }
 

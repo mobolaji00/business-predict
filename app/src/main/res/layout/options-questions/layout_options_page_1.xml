@@ -1,4 +1,4 @@
-<merge xmlns:android="http://schemas.android.com/apk/res/android">
+<merge xmlns:android="http://schemas.android.com/apk/res/layout/android">
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -13,7 +13,7 @@
             android:gravity="center_vertical"
             android:orientation="vertical">
 
-            <include layout="@layout/layout_product_service_question" />
+            <include layout="@layout/options_questions/layout_product_service_question" />
 
             <include layout="@layout/layout_owners_question" />
 

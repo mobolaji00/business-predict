@@ -19,10 +19,10 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link DisplayResultsFragment.OnFragmentInteractionListener} interface
+ * {@link ResultsBaseFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
  */
-public class DisplayResultsFragment extends Fragment {
+public class ResultsBaseFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
     private View view;
@@ -30,7 +30,7 @@ public class DisplayResultsFragment extends Fragment {
     private ViewPager mPager;
     private PagerAdapter mPagerAdapter;
 
-    public DisplayResultsFragment() {
+    public ResultsBaseFragment() {
         // Required empty public constructor
     }
 
@@ -39,7 +39,7 @@ public class DisplayResultsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.fragment_display_results, container, false);
+        view = inflater.inflate(R.layout.results_pager_fragment, container, false);
 
         List<Fragment> fragments = getResultsFragments();
         mPagerAdapter = new MyPageAdapter(getFragmentManager(),fragments);

@@ -19,10 +19,10 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link ChooseOptionsFragment.OnFragmentInteractionListener} interface
+ * {@link OptionsBaseFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
  */
-public class ChooseOptionsFragment extends Fragment {
+public class OptionsBaseFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
     private View view;
@@ -31,7 +31,7 @@ public class ChooseOptionsFragment extends Fragment {
     private PagerAdapter mPagerAdapter;
 
 
-    public ChooseOptionsFragment() {
+    public OptionsBaseFragment() {
         // Required empty public constructor
     }
 
@@ -40,7 +40,7 @@ public class ChooseOptionsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.fragment_choose_options, container, false);
+        view = inflater.inflate(R.layout.options_pager_fragment, container, false);
 
         List<Fragment> fragments = getOptionsFragments();
         mPagerAdapter = new MyPageAdapter(getFragmentManager(),fragments);
@@ -113,9 +113,9 @@ public class ChooseOptionsFragment extends Fragment {
     private List<Fragment> getOptionsFragments()
     {
         List<Fragment> fList = new ArrayList<Fragment>();
-        fList.add(CreateResultsFragments.newInstance("Fragment 1"));
-        fList.add(CreateResultsFragments.newInstance("Fragment 2"));
-        fList.add(CreateResultsFragments.newInstance("Fragment 3"));
+        fList.add(CreateOptionsFragments.newInstance("Fragment 1"));
+        fList.add(CreateOptionsFragments.newInstance("Fragment 2"));
+        fList.add(CreateOptionsFragments.newInstance("Fragment 3"));
         return fList;
     }
 

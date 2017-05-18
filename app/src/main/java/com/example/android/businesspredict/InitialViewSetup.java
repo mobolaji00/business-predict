@@ -5,9 +5,7 @@ import android.content.res.Resources;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.HorizontalScrollView;
-import android.widget.Spinner;
 
 /**
  * Created by mobolajioo on 5/2/17.
@@ -57,6 +55,7 @@ public class InitialViewSetup {
 
     public void createSpinners(View view, Context context)
     {
+        /*
         Spinner owner_spinner = (Spinner) view.findViewById(R.id.spinner_owner);
         ArrayAdapter<CharSequence> owner_adapter = ArrayAdapter.createFromResource(context,
                 R.array.array_1_to_10, android.R.layout.simple_spinner_item);
@@ -72,6 +71,7 @@ public class InitialViewSetup {
         owner_operator_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         owner_operator_spinner.setAdapter(owner_operator_adapter);
         owner_operator_spinner.setSelection(owner_operator_adapter.getPosition("1"));
+        */
 
     }
 
