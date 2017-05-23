@@ -1,0 +1,20 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <TextView
+        android:id="@+id/perc_sales_govt_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="What percentage of the business’ sales were to government agencies?"
+        android:layout_marginLeft="20dp"/>
+
+
+    <EditText
+        android:id="@+id/perc_sales_govt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:layout_marginLeft="20dp"
+        android:tag="input"/>
+
+</merge>

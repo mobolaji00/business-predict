@@ -7,6 +7,9 @@
     <string name="service">Service</string>
     <string name="product_and_service">Product &amp; Service</string>
 
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
     <string-array name="array_1_to_10">
         <item>1</item>
         <item>2</item>
@@ -19,6 +22,36 @@
         <item>9</item>
         <item>10+</item>
     </string-array>
+
+    <string name="introductory_text">
+    How many individuals or entities own this business?How many individuals or entities own this business?
+    How many individuals or entities own this business?How many individuals or entities own this business?
+        \n\n
+    How many individuals or entities own this business?How many individuals or entities own this business?
+    How many individuals or entities own this business?How many individuals or entities own this business?
+    </string>
+
+    <string name="introductory_text_title"><b><i>
+        \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0
+        \u00A0\u00A0\u00A0
+        <u>Instructions</u>
+        \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0
+        \u00A0\u00A0\u00A0
+    </i></b></string>
+
+    <string name="analyze">Analyze</string>
+
+    <string name="page_1">page_1</string>
+    <string name="page_2">page_2</string>
+    <string name="page_3">page_3</string>
+    <string name="page_4">page_4</string>
+    <string name="page_5">page_5</string>
+    <string name="page_6">page_6</string>
+    <string name="page_7">page_7</string>
+    <string name="page_8">page_8</string>
+    <string name="page_9">page_9</string>
+    <string name="page_10">page_10</string>
+    <string name="page_11">page_11</string>
 
 </resources>
 

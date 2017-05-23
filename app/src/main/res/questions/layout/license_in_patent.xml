@@ -1,13 +1,18 @@
 <merge xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <Space
+        android:layout_width="1dp"
+        android:layout_height="30dp" />
+
     <TextView
-        android:id="@+id/product_service_question"
+        android:id="@+id/license_in_patent_question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="What does this business provide?"
+        android:text="Does this business license in any patents?"
         android:layout_marginLeft="20dp"/>
 
     <RadioGroup
+        android:id="@+id/license_in_patent_rad_grp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -15,22 +20,16 @@
         android:tag="input">
 
         <RadioButton
-            android:id="@+id/radio_product"
+            android:id="@+id/yes_license_in_patent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/product" />
+            android:text="@string/yes" />
 
         <RadioButton
-            android:id="@+id/radio_service"
+            android:id="@+id/no_license_in_patent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/service" />
-
-        <RadioButton
-            android:id="@+id/radio_product_and_service"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/product_and_service" />
+            android:text="@string/no" />
 
     </RadioGroup>
 

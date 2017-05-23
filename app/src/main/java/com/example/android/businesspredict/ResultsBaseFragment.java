@@ -43,7 +43,7 @@ public class ResultsBaseFragment extends Fragment {
 
         List<Fragment> fragments = getResultsFragments();
         mPagerAdapter = new MyPageAdapter(getFragmentManager(),fragments);
-        mPager = (ViewPager)view.findViewById(R.id.view_results_pager);
+        mPager = (ViewPager)view.findViewById(R.id.results_pager);
         mPager.setAdapter(mPagerAdapter);
 
         return view;
@@ -93,8 +93,8 @@ public class ResultsBaseFragment extends Fragment {
     {
         List<Fragment> fList = new ArrayList<Fragment>();
         fList.add(CreateResultsFragments.newInstance(""));
-        fList.add(CreateResultsFragments.newInstance(""));
-        fList.add(CreateResultsFragments.newInstance(""));
+        //fList.add(CreateResultsFragments.newInstance(""));
+        //fList.add(CreateResultsFragments.newInstance(""));
         return fList;
     }
 

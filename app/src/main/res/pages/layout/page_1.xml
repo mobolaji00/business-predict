@@ -5,7 +5,7 @@
         android:layout_height="fill_parent">
 
     <LinearLayout
-            android:id="@+id/test3"
+            android:id="@+id/page_1"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:background="@drawable/default_display"
@@ -13,7 +13,9 @@
             android:gravity="center_vertical"
             android:orientation="vertical">
 
-        <include layout="@layout/product_or_service" />
+        <include layout="@layout/number_of_owners"/>
+
+        <include layout="@layout/number_of_owner_operators" />
 
     </LinearLayout>
 

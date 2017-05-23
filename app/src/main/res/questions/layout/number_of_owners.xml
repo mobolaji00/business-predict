@@ -1,0 +1,25 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <Space
+        android:layout_width="1dp"
+        android:layout_height="30dp" />
+
+    <TextView
+        android:id="@+id/number_of_owners_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="How many individuals or entities own this business?"
+        android:layout_marginLeft="20dp"/>
+
+    <Spinner
+        android:id="@+id/number_of_owners_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:tag="input"/>
+
+    <Space
+        android:layout_width="1dp"
+        android:layout_height="30dp" />
+
+</merge>

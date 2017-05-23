@@ -7,6 +7,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+
+import java.util.ArrayList;
 
 
 /**
@@ -15,7 +18,7 @@ import android.view.ViewGroup;
  * {@link AnalyzeButtonFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
  */
-public class AnalyzeButtonFragment extends Fragment {
+public class AnalyzeButtonFragment extends Fragment implements View.OnClickListener {
 
     private OnFragmentInteractionListener mListener;
     private View view;
@@ -30,6 +33,10 @@ public class AnalyzeButtonFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.analyze_button_fragment, container, false);
+
+        Button analyzeButton = (Button) view.findViewById(R.id.analyze_button);
+        analyzeButton.setOnClickListener(this);
+
         return view;
     }
 
@@ -38,17 +45,23 @@ public class AnalyzeButtonFragment extends Fragment {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
         }
+
     }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
         }
+
+        else
+        {
+            throw new RuntimeException(context.toString()
+                    + " must implement Listeners");
+        }
+
     }
 
     @Override
@@ -70,6 +83,19 @@ public class AnalyzeButtonFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
-        public void onAnalyzeButtonClicked();
+        ArrayList onAnalyzeButtonClicked();
     }
+
+    // Create an anonymous implementation of OnClickListener
+        public void onClick(View v) {
+
+            ArrayList inputContents = new ArrayList();
+
+            mListener.onAnalyzeButtonClicked();
+
+    CheckInputFields checkedOut = new CheckInputFields();
+
+
+        }
+
 }

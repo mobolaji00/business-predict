@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <LinearLayout
+        android:id="@+id/page_3"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/default_display"
+        android:layout_margin="@dimen/options_start_adjust"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <include layout="@layout/license_out_patent" />
+
+        <include layout="@layout/license_out_copyright" />
+
+        <include layout="@layout/license_out_trademark" />
+
+    </LinearLayout>
+
+</LinearLayout>

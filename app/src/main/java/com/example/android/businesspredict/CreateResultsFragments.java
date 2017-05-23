@@ -2,9 +2,11 @@ package com.example.android.businesspredict;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 /**
  * Created by mobolajioo on 5/17/17.
@@ -26,15 +28,15 @@ public class CreateResultsFragments extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
         String frag_num = getArguments().getString(FRAG_NUM);
-        //int frag_res_id = getContext().getResources().getIdentifier(frag_num,"layout", getContext().getPackageName());
 
         View view = inflater.inflate(R.layout.create_results_fragment, container, false);
 
-        /*
-        View v = view.findViewById(R.id.test1);
-        InitialViewSetup ivs = new InitialViewSetup();
-        ivs.surroundViewWithBorder(v);
-        */
+        TextView textRegion = (TextView) view.findViewById(R.id.introduction);
+        textRegion.setGravity(Gravity.CENTER);
+
+        TextView textRegion2 = (TextView) view.findViewById(R.id.introduction_title);
+        textRegion2.setGravity(Gravity.CENTER);
+
 
         return view;
     }

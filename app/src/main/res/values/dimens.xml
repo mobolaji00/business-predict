@@ -8,4 +8,5 @@
 
     <dimen name="results_start_adjust">5dp</dimen>
     <dimen name="options_start_adjust">5dp</dimen>
+
 </resources>

@@ -53,7 +53,7 @@ public class InitialViewSetup {
 
     }
 
-    public void createSpinners(View view, Context context)
+    public void createSpinners(int frag_res_id, View view, Context context)
     {
         /*
         Spinner owner_spinner = (Spinner) view.findViewById(R.id.spinner_owner);

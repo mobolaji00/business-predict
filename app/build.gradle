@@ -27,6 +27,7 @@ android {
         main {
             res.srcDirs =
                     [
+                            'src/main/res/pages',
                             'src/main/res/questions',
                             'src/main/res/layout',
                             'src/main/res'
