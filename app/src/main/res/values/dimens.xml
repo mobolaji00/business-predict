@@ -3,10 +3,7 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
-    <dimen name="results_scroll_adjust">5dp</dimen>
-    <dimen name="options_scroll_adjust">5dp</dimen>
-
-    <dimen name="results_start_adjust">5dp</dimen>
-    <dimen name="options_start_adjust">5dp</dimen>
+    <dimen name="graph_margin">5dp</dimen>
+    <dimen name="text_margin">5dp</dimen>
 
 </resources>

@@ -11,6 +11,7 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -27,6 +28,7 @@ android {
         main {
             res.srcDirs =
                     [
+                            'src/main/res/graphs',
                             'src/main/res/pages',
                             'src/main/res/questions',
                             'src/main/res/layout',
@@ -43,6 +45,8 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.1.1'
     compile 'com.android.support:support-v4:25.1.1'
+    compile 'com.android.support:design:25.2.0'
+    compile 'com.github.PhilJay:MPAndroidChart:v3.0.2'
     testCompile 'junit:junit:4.12'
 }
 

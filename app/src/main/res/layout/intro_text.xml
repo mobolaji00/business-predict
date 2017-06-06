@@ -8,8 +8,8 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:orientation="vertical"
-        android:background="@drawable/default_display"
-        android:layout_margin="@dimen/options_start_adjust"
+        android:background="@drawable/text_background"
+        android:layout_margin="@dimen/text_margin"
         android:gravity="center_vertical">
 
         <TextView
@@ -22,7 +22,7 @@
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:textSize="22dp"
-            android:layout_margin="@dimen/results_start_adjust" />
+            android:layout_margin="@dimen/text_margin" />
 
         <TextView
             android:id="@+id/introduction"
@@ -33,7 +33,7 @@
             android:paddingBottom="5dp"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:layout_margin="@dimen/results_start_adjust"/>
+            android:layout_margin="@dimen/text_margin"/>
 
     </LinearLayout>
 

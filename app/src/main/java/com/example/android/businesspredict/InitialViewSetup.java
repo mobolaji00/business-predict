@@ -16,13 +16,6 @@ public class InitialViewSetup {
     private View view;
     private HorizontalScrollView hsv;
 
-    /**
-    public InitialViewSetup(View view, HorizontalScrollView hsv)
-    {
-        this.view = view;
-        this.hsv = hsv;
-    }
-     **/
 
     public void surroundViewWithBorder(final View v)
     {
@@ -31,7 +24,7 @@ public class InitialViewSetup {
         ViewGroup.LayoutParams params = v.getLayoutParams();
         params.width = screenWidth;
         v.setLayoutParams(params);
-        v.setBackgroundResource(R.drawable.default_display);
+        v.setBackgroundResource(R.drawable.text_background);
 
     }
 

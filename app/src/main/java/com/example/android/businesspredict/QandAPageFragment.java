@@ -4,31 +4,34 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by mobolajioo on 5/18/17.
  */
 
 
-public class CreateOptionsFragment extends Fragment {
+public class QandAPageFragment extends Fragment {
 
-    public static final String FRAG_NUM = "FRAG_NUM";
-    public static final String SPIN_IDS = "SPIN_IDS";
+    public static final String fragmentFilename = "fragmentFilename";
+    public static final String spinnerIDs = "spinnerIDs";
+
     private View view;
+    private String fragmentName = "unknown for now";
 
-    public static final CreateOptionsFragment newInstance(String frag_num, String[] spin_ids)
+    public static final QandAPageFragment newInstance(String fragmentFilename, String[] spinnerIDs)
     {
-        CreateOptionsFragment f = new CreateOptionsFragment();
+        QandAPageFragment f = new QandAPageFragment();
         Bundle bdl = new Bundle(2);
-        bdl.putString(FRAG_NUM, frag_num);
-        bdl.putStringArray(SPIN_IDS, spin_ids);
+        bdl.putString(QandAPageFragment.fragmentFilename, fragmentFilename);
+        bdl.putStringArray(QandAPageFragment.spinnerIDs, spinnerIDs);
         f.setArguments(bdl);
         return f;
     }
@@ -36,17 +39,18 @@ public class CreateOptionsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
 
-        String frag_num = getArguments().getString(FRAG_NUM);
-        int frag_res_id = getContext().getResources().getIdentifier(frag_num,"layout", getContext().getPackageName());
+        String fragmentFilename = getArguments().getString(QandAPageFragment.fragmentFilename);
+        int fragmentResourceID = getContext().getResources().getIdentifier(fragmentFilename,"layout", getContext().getPackageName());
 
-        view = inflater.inflate(frag_res_id,container, false);
+        view = inflater.inflate(fragmentResourceID,container, false);
 
-        changesToViewAtStart(frag_res_id,frag_num,view,getArguments().getStringArray(SPIN_IDS));
+        makeChangesToView(fragmentResourceID,fragmentFilename,view,getArguments().getStringArray(spinnerIDs));
+        fragmentName = fragmentFilename;
 
         return view;
     }
 
-    public void changesToViewAtStart(int frag_res_id, String frag_num,View view, String[] spin_ids)
+    public void makeChangesToView(int frag_res_id, String frag_num, View view, String[] spin_ids)
     {
         switch(frag_num)
         {
@@ -74,24 +78,21 @@ public class CreateOptionsFragment extends Fragment {
 
             spinner_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             spinner.setAdapter(spinner_adapter);
-            spinner.setSelection(spinner_adapter.getPosition("1"));
+            spinner.setSelection(spinner_adapter.getPosition(""));
         }
 
     }
 
-    public ArrayList<View> usersInput()
+    public HashMap<String,View> getQuestionsViewsFromPage(String viewTag)
     {
-        ViewGroup vg = (ViewGroup) view.findViewWithTag("input");
-        View v;
-        ArrayList<View> inputViews = new ArrayList<View>();
+        HashMap<String,View> viewsOnPage = new HashMap<String,View>();
+        Log.i(viewTag,fragmentName);
 
-        for (int i = 0;i < vg.getChildCount(); i++)
-        {
-            v = vg.getChildAt(i);
-            inputViews.add(v);
-        }
+        ViewGroup vg = ((ViewGroup) view);
+        GetViewsFromPage gvop = new GetViewsFromPage();
+        viewsOnPage = gvop.getViewsOnPage(vg,viewTag);
 
-        return inputViews;
+        return viewsOnPage;
     }
 
     public interface OnFragmentInteractionListener {

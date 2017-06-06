@@ -1,8 +1,6 @@
 package com.example.android.businesspredict;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.ContextWrapper;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -13,16 +11,15 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
-import java.util.List;
 
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link ResultsBaseFragment.OnFragmentInteractionListener} interface
+ * {@link ResultsBasePagerFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
  */
-public class ResultsBaseFragment extends Fragment {
+public class ResultsBasePagerFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
     private View view;
@@ -30,7 +27,7 @@ public class ResultsBaseFragment extends Fragment {
     private ViewPager mPager;
     private PagerAdapter mPagerAdapter;
 
-    public ResultsBaseFragment() {
+    public ResultsBasePagerFragment() {
         // Required empty public constructor
     }
 
@@ -39,11 +36,11 @@ public class ResultsBaseFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.results_pager_fragment, container, false);
+        view = inflater.inflate(R.layout.results_base_pager_fragment, container, false);
 
-        List<Fragment> fragments = getResultsFragments();
+        ArrayList<Fragment> fragments = getResultsFragments();
         mPagerAdapter = new MyPageAdapter(getFragmentManager(),fragments);
-        mPager = (ViewPager)view.findViewById(R.id.results_pager);
+        mPager = (ViewPager)view.findViewById(R.id.results_base_pager);
         mPager.setAdapter(mPagerAdapter);
 
         return view;
@@ -86,30 +83,15 @@ public class ResultsBaseFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
-        public void onDisplayAreaClicked();
     }
 
-    private List<Fragment> getResultsFragments()
+    private ArrayList<Fragment> getResultsFragments()
     {
-        List<Fragment> fList = new ArrayList<Fragment>();
-        fList.add(CreateResultsFragments.newInstance(""));
-        //fList.add(CreateResultsFragments.newInstance(""));
-        //fList.add(CreateResultsFragments.newInstance(""));
+        ArrayList<Fragment> fList = new ArrayList<Fragment>();
+        fList.add(ResultsPageFragment.newInstance("result_graph_1"));
+        fList.add(ResultsPageFragment.newInstance("result_graph_2"));
+        fList.add(ResultsPageFragment.newInstance("result_graph_3"));
         return fList;
     }
 
-    class cleanActivity
-    {
-        public Activity getActivity()
-        {
-            Context context = view.getContext();
-            while (context instanceof ContextWrapper) {
-                if (context instanceof Activity) {
-                    return (Activity)context;
-                }
-                context = ((ContextWrapper)context).getBaseContext();
-            }
-            return null;
-        }
-    }
 }

@@ -6,7 +6,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="What is the total dollar amonut of equity invested in this business by others apart from owners/operators this year?"
-        android:layout_marginLeft="20dp"/>
+        android:layout_marginLeft="20dp"
+        android:tag="@string/question"/>
 
 
     <EditText
@@ -15,6 +16,6 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:layout_marginLeft="20dp"
-        android:tag="input"/>
+        android:tag="@string/answer"/>
 
 </merge>

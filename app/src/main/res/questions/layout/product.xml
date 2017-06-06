@@ -1,0 +1,37 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/product_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Does this business provide a product?"
+        android:layout_marginLeft="20dp"
+        android:tag="@string/question"/>
+
+    <RadioGroup
+        android:id="@+id/product_rad_grp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="20dp"
+        android:tag="@string/answer">
+
+        <RadioButton
+            android:id="@+id/radio_product_yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/yes" />
+
+        <RadioButton
+            android:id="@+id/radio_product_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no"/>
+
+    </RadioGroup>
+
+    <Space
+        android:layout_width="1dp"
+        android:layout_height="30dp" />
+
+</merge>

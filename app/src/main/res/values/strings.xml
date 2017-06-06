@@ -11,6 +11,7 @@
     <string name="no">No</string>
 
     <string-array name="array_1_to_10">
+        <item></item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
@@ -52,6 +53,14 @@
     <string name="page_9">page_9</string>
     <string name="page_10">page_10</string>
     <string name="page_11">page_11</string>
+    <string name="page_12">page_12</string>
+
+    <string name="question">question</string>
+    <string name="answer">answer</string>
+
+    <string name="unanswered_question_message">You have left some questions unanswered</string>
+    <string name="percentage_greater_than_100_message">The total percentage of your sales should not be greater than 100</string>
+
 
 </resources>
 

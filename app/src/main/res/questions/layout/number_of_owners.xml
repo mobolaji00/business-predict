@@ -9,14 +9,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="How many individuals or entities own this business?"
-        android:layout_marginLeft="20dp"/>
+        android:layout_marginLeft="20dp"
+        android:tag="@string/question"/>
 
     <Spinner
         android:id="@+id/number_of_owners_spinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:tag="input"/>
+        android:tag="@string/answer"/>
 
     <Space
         android:layout_width="1dp"

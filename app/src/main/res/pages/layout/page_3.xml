@@ -8,16 +8,15 @@
         android:id="@+id/page_3"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:background="@drawable/default_display"
-        android:layout_margin="@dimen/options_start_adjust"
+        android:background="@drawable/text_background"
+        android:layout_margin="@dimen/text_margin"
         android:gravity="center_vertical"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:tag="page">
 
-        <include layout="@layout/license_out_patent" />
+        <include layout="@layout/has_sale" />
 
-        <include layout="@layout/license_out_copyright" />
-
-        <include layout="@layout/license_out_trademark" />
+        <include layout="@layout/comp_advantage" />
 
     </LinearLayout>
 

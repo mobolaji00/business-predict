@@ -9,7 +9,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Does this business license in any patents?"
-        android:layout_marginLeft="20dp"/>
+        android:layout_marginLeft="20dp"
+        android:tag="@string/question"/>
 
     <RadioGroup
         android:id="@+id/license_in_patent_rad_grp"
@@ -17,7 +18,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginLeft="20dp"
-        android:tag="input">
+        android:tag="@string/answer">
 
         <RadioButton
             android:id="@+id/yes_license_in_patent"

@@ -9,8 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import java.util.ArrayList;
-
 
 /**
  * A simple {@link Fragment} subclass.
@@ -83,18 +81,13 @@ public class AnalyzeButtonFragment extends Fragment implements View.OnClickListe
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
-        ArrayList onAnalyzeButtonClicked();
+        void onAnalyzeButtonClicked();
     }
 
     // Create an anonymous implementation of OnClickListener
         public void onClick(View v) {
 
-            ArrayList inputContents = new ArrayList();
-
             mListener.onAnalyzeButtonClicked();
-
-    CheckInputFields checkedOut = new CheckInputFields();
-
 
         }
 
